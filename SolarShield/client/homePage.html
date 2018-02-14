@@ -1,0 +1,23 @@
+<template name="homepage">
+  <body>
+    <div id="overlay">
+  <div id="overlay-content">
+    <img src="images/solarShieldLogo.jpg" alt="Second slide"><br>
+    This will all vanish in 5 seconds ...
+  </div>
+</div>
+    {{> navbar}}
+    <container>
+      {{> carousel}}
+      <main>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6">{{> welcome}}</div>
+          <div class="col-xs-6">{{> info}} {{> video}}</div>
+        </div>
+      </main>
+    </container>
+    {{> footer}}
+  </body>
+
+</template>

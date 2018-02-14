@@ -1,0 +1,49 @@
+<template name="contact">
+  <body>
+    {{> navbar}}
+    <container>
+      <main>
+        <h3>Contact Us</h3>
+        <hr>
+        <form class="form-inline" id="searchForm" role="form">
+                  <div class="form-group">
+
+                      <input type="text" class="form-control" name="firstN" placeholder="First Name" />
+                      <input type="text" class="form-control" name="lastN" placeholder="Last Name"/>
+                      <div class="input-group">
+                        <!--<span class="input-group-addon" id="basic-addon1">$</span> -->
+                        <input type="text" class="form-control" name="email" style="width:300px" placeholder="Email" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group">
+                        <!--<span class="input-group-addon" id="basic-addon1">$</span>-->
+                        <input type="text" class="form-control" name="subject" style="width:300px" placeholder="Subject" aria-describedby="basic-addon1">
+                      </div>
+                      <br><br>
+                      <textarea rows="4" cols="80" name="message" placeholder="Enter Message"></textarea>
+                      <br>
+                      <button type="submit" class="btn btn-success" name="submit">Submit</button><br><br>
+                  </div>
+          </form>
+
+              {{> map}}
+              {{> info}}
+
+      </main>
+    </container>
+    {{> footer}}
+  </body>
+
+</template>
+
+
+<template name="map">
+  <body>
+    <div class="map-container">
+      {{#unless geolocationError}}
+        {{> googleMap name="map" options=mapOptions}}
+      {{else}}
+        Geolocation failed: {{geolocationError}}
+      {{/unless}}
+    </div>
+</body>
+</template>
